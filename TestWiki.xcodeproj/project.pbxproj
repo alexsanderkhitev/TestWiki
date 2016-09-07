@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		426BC0DF12F12DA72959650E /* Pods_TestWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B387D4CFBFF86C3C4255CB8B /* Pods_TestWiki.framework */; };
+		A6429C551D7FFC450004DAFA /* WikiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6429C541D7FFC450004DAFA /* WikiResponse.swift */; };
 		A64C97041D7FF33C00C57077 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C97031D7FF33C00C57077 /* DownloadManager.swift */; };
+		A64C97071D7FF7E800C57077 /* WikiArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C97061D7FF7E800C57077 /* WikiArticle.swift */; };
 		A657E8081D7F06AC00367077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657E8071D7F06AC00367077 /* AppDelegate.swift */; };
 		A657E80D1D7F06AC00367077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657E80B1D7F06AC00367077 /* Main.storyboard */; };
 		A657E8101D7F06AC00367077 /* TestWiki.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A657E80E1D7F06AC00367077 /* TestWiki.xcdatamodeld */; };
@@ -21,7 +23,9 @@
 
 /* Begin PBXFileReference section */
 		95838F5C31504EC275501D76 /* Pods-TestWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestWiki/Pods-TestWiki.debug.xcconfig"; sourceTree = "<group>"; };
+		A6429C541D7FFC450004DAFA /* WikiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiResponse.swift; sourceTree = "<group>"; };
 		A64C97031D7FF33C00C57077 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		A64C97061D7FF7E800C57077 /* WikiArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiArticle.swift; sourceTree = "<group>"; };
 		A657E8041D7F06AC00367077 /* TestWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657E8071D7F06AC00367077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A657E80C1D7F06AC00367077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A6429C531D7FFC0C0004DAFA /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A6429C541D7FFC450004DAFA /* WikiResponse.swift */,
+			);
+			name = Responses;
+			sourceTree = "<group>";
+		};
+		A64C97051D7FF7D500C57077 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A64C97061D7FF7E800C57077 /* WikiArticle.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		A657E7FB1D7F06AC00367077 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +101,8 @@
 				A657E8071D7F06AC00367077 /* AppDelegate.swift */,
 				A657E8251D7F13B100367077 /* Controllers */,
 				A657E8261D7F13BE00367077 /* Managers */,
+				A6429C531D7FFC0C0004DAFA /* Responses */,
+				A64C97051D7FF7D500C57077 /* Models */,
 				A657E80B1D7F06AC00367077 /* Main.storyboard */,
 				A657E8111D7F06AC00367077 /* Assets.xcassets */,
 				A657E8131D7F06AC00367077 /* LaunchScreen.storyboard */,
@@ -238,12 +260,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6429C551D7FFC450004DAFA /* WikiResponse.swift in Sources */,
 				A657E82A1D7F182F00367077 /* MainTableViewController.swift in Sources */,
 				A64C97041D7FF33C00C57077 /* DownloadManager.swift in Sources */,
 				A6D653E31D7F1A0C00D9B28A /* LocationManagerDelegate.swift in Sources */,
 				A657E8281D7F13CA00367077 /* LocationManager.swift in Sources */,
 				A657E8101D7F06AC00367077 /* TestWiki.xcdatamodeld in Sources */,
 				A657E8081D7F06AC00367077 /* AppDelegate.swift in Sources */,
+				A64C97071D7FF7E800C57077 /* WikiArticle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
 class MainTableViewController: UITableViewController, LocationManagerDelegate {
     
@@ -64,6 +65,6 @@ class MainTableViewController: UITableViewController, LocationManagerDelegate {
     // MARK: - LocationManagerDelegate functions 
     func didReceiveCoordinate(coordinate: CLLocationCoordinate2D) {
         print("didReceiveCoordinate", coordinate)
-        DownloadManager.shared.downloadWiliArticles(coordinate)
+        DownloadManager.shared.downloadWiliArticles(<#T##coordinate: CLLocationCoordinate2D##CLLocationCoordinate2D#>, success: <#T##((wikiArticles: [WikiArticle]) -> ())?##((wikiArticles: [WikiArticle]) -> ())?##(wikiArticles: [WikiArticle]) -> ()#>)
     }
 }
