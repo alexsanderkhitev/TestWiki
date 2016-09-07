@@ -12,7 +12,11 @@ import SVProgressHUD
 
 class MainTableViewController: UITableViewController, LocationManagerDelegate {
     
-    // MARK: - Controllers
+    // MARK: - Data 
+    private var wikiArticles = [WikiArticle]()
+    
+    // MARK: - Identifiers
+    private let mainTableViewCellIdentifier = "mainTableViewCellIdentifier"
     
     // MARK: - Lifecycle
     
@@ -20,6 +24,7 @@ class MainTableViewController: UITableViewController, LocationManagerDelegate {
         super.viewDidLoad()
         // settings
         setupSettings()
+        setupTableViewSettings()
         setupDelegates()
         // requests
         requestLocation()
@@ -36,35 +41,54 @@ class MainTableViewController: UITableViewController, LocationManagerDelegate {
     
     // MARK: - Requests functions
     private func requestLocation() {
+        SVProgressHUD.show()
         LocationManager.shared.requestLocation()
+    }
+    
+    // MARK: - Table view settings functions 
+    private func setupTableViewSettings() {
+        tableView.registerClass(MainTableViewCell.self, forCellReuseIdentifier: mainTableViewCellIdentifier)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1 ?? 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return wikiArticles.count ?? 0
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("mainTableViewCellIdentifier", forIndexPath: indexPath) as! MainTableViewCell
 
-        // Configure the cell...
-
+        let wikiArticle = wikiArticles[indexPath.row]
+        
+        cell.textLabel?.text = wikiArticle.title
+        
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let wikiArticle = wikiArticles[indexPath.row]
+        guard let url = DownloadManager.shared.returnArticlePage(wikiArticle.pageid) else { return }
+        let detailViewController = DetailViewController()
+        detailViewController.url = url
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 
  
     // MARK: - LocationManagerDelegate functions 
     func didReceiveCoordinate(coordinate: CLLocationCoordinate2D) {
-        print("didReceiveCoordinate", coordinate)
-        DownloadManager.shared.downloadWiliArticles(<#T##coordinate: CLLocationCoordinate2D##CLLocationCoordinate2D#>, success: <#T##((wikiArticles: [WikiArticle]) -> ())?##((wikiArticles: [WikiArticle]) -> ())?##(wikiArticles: [WikiArticle]) -> ()#>)
+        DownloadManager.shared.downloadWiliArticles(coordinate, success: { (wikiArticles) in
+            self.wikiArticles = wikiArticles
+            self.tableView.reloadData()
+            if SVProgressHUD.isVisible() {
+                SVProgressHUD.dismiss()
+            }
+            }) { (error) in
+                
+        }
     }
 }

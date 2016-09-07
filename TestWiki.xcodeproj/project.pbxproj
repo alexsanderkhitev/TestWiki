@@ -18,6 +18,8 @@
 		A657E8151D7F06AC00367077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657E8131D7F06AC00367077 /* LaunchScreen.storyboard */; };
 		A657E8281D7F13CA00367077 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657E8271D7F13CA00367077 /* LocationManager.swift */; };
 		A657E82A1D7F182F00367077 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657E8291D7F182F00367077 /* MainTableViewController.swift */; };
+		A67207C11D80085B00C04404 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67207C01D80085B00C04404 /* MainTableViewCell.swift */; };
+		A67207C31D800A5600C04404 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67207C21D800A5600C04404 /* DetailViewController.swift */; };
 		A6D653E31D7F1A0C00D9B28A /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D653E21D7F1A0C00D9B28A /* LocationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		A657E8161D7F06AC00367077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A657E8271D7F13CA00367077 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A657E8291D7F182F00367077 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A67207C01D80085B00C04404 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		A67207C21D800A5600C04404 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A6D653E21D7F1A0C00D9B28A /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		B387D4CFBFF86C3C4255CB8B /* Pods_TestWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7654F7F8D70DF767BF0566 /* Pods-TestWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestWiki/Pods-TestWiki.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			children = (
 				A657E8071D7F06AC00367077 /* AppDelegate.swift */,
 				A657E8251D7F13B100367077 /* Controllers */,
+				A67207BF1D80082300C04404 /* Cells */,
 				A657E8261D7F13BE00367077 /* Managers */,
 				A6429C531D7FFC0C0004DAFA /* Responses */,
 				A64C97051D7FF7D500C57077 /* Models */,
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A657E8291D7F182F00367077 /* MainTableViewController.swift */,
+				A67207C21D800A5600C04404 /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +134,14 @@
 				A64C97031D7FF33C00C57077 /* DownloadManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		A67207BF1D80082300C04404 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A67207C01D80085B00C04404 /* MainTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		DE299C96BE1CF612034EF6C0 /* Frameworks */ = {
@@ -261,11 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6429C551D7FFC450004DAFA /* WikiResponse.swift in Sources */,
+				A67207C11D80085B00C04404 /* MainTableViewCell.swift in Sources */,
 				A657E82A1D7F182F00367077 /* MainTableViewController.swift in Sources */,
 				A64C97041D7FF33C00C57077 /* DownloadManager.swift in Sources */,
 				A6D653E31D7F1A0C00D9B28A /* LocationManagerDelegate.swift in Sources */,
 				A657E8281D7F13CA00367077 /* LocationManager.swift in Sources */,
 				A657E8101D7F06AC00367077 /* TestWiki.xcdatamodeld in Sources */,
+				A67207C31D800A5600C04404 /* DetailViewController.swift in Sources */,
 				A657E8081D7F06AC00367077 /* AppDelegate.swift in Sources */,
 				A64C97071D7FF7E800C57077 /* WikiArticle.swift in Sources */,
 			);

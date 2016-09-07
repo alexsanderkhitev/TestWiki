@@ -17,22 +17,29 @@ class DownloadManager {
     
     // MARK: - links 
     private let wikiLocationBaseURL = "https://en.wikipedia.org/w/api.php?format=json&action=query&list=geosearch&gsradius=10000&gscoord="
+    
+    private let commonPath = "https://en.wikipedia.org/wiki?curid="
 
     func downloadWiliArticles(coordinate: CLLocationCoordinate2D, success: ((wikiArticles: [WikiArticle]) -> ())?, fail: ((error: NSError?) -> ())?) {
         let additionalPath = "\(coordinate.latitude)%7C\(coordinate.longitude)&gslimit=50"
         let fullPath = wikiLocationBaseURL + additionalPath
         guard let url = NSURL(string: fullPath) else { return }
-//        Manager.sharedInstance.request(.GET, url).responseJSON { (response) in
-//            print(response.result.value)
-//        }
         Manager.sharedInstance.request(.GET, url).responseObject { (response: Response<WikiResponse, NSError>) in
             guard let wikiArticles = response.result.value?.wikiArticles else {
                 guard let error = response.result.error else { return }
-                
+                fail?(error: error)
                 return
             }
             success?(wikiArticles: wikiArticles)
         }
+    }
+    
+    func returnArticlePage(id: Int) -> NSURL? {
+        let fullPath = commonPath + "\(id)"
+        guard let url = NSURL(string: fullPath) else {
+            return nil
+        }
+        return url 
     }
     
 }
