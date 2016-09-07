@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		426BC0DF12F12DA72959650E /* Pods_TestWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B387D4CFBFF86C3C4255CB8B /* Pods_TestWiki.framework */; };
+		A64C97041D7FF33C00C57077 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C97031D7FF33C00C57077 /* DownloadManager.swift */; };
 		A657E8081D7F06AC00367077 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A657E8071D7F06AC00367077 /* AppDelegate.swift */; };
 		A657E80D1D7F06AC00367077 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A657E80B1D7F06AC00367077 /* Main.storyboard */; };
 		A657E8101D7F06AC00367077 /* TestWiki.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A657E80E1D7F06AC00367077 /* TestWiki.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		95838F5C31504EC275501D76 /* Pods-TestWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestWiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestWiki/Pods-TestWiki.debug.xcconfig"; sourceTree = "<group>"; };
+		A64C97031D7FF33C00C57077 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		A657E8041D7F06AC00367077 /* TestWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A657E8071D7F06AC00367077 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A657E80C1D7F06AC00367077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				A657E8271D7F13CA00367077 /* LocationManager.swift */,
 				A6D653E21D7F1A0C00D9B28A /* LocationManagerDelegate.swift */,
+				A64C97031D7FF33C00C57077 /* DownloadManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A657E82A1D7F182F00367077 /* MainTableViewController.swift in Sources */,
+				A64C97041D7FF33C00C57077 /* DownloadManager.swift in Sources */,
 				A6D653E31D7F1A0C00D9B28A /* LocationManagerDelegate.swift in Sources */,
 				A657E8281D7F13CA00367077 /* LocationManager.swift in Sources */,
 				A657E8101D7F06AC00367077 /* TestWiki.xcdatamodeld in Sources */,

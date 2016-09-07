@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'TestWiki' do
     pod 'Alamofire', '~> 3.4'
+    pod 'SVProgressHUD'
 end

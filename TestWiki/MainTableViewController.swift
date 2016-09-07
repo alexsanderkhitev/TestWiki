@@ -64,5 +64,6 @@ class MainTableViewController: UITableViewController, LocationManagerDelegate {
     // MARK: - LocationManagerDelegate functions 
     func didReceiveCoordinate(coordinate: CLLocationCoordinate2D) {
         print("didReceiveCoordinate", coordinate)
+        DownloadManager.shared.downloadWiliArticles(coordinate)
     }
 }
