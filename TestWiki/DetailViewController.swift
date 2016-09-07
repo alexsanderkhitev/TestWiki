@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DetailViewController: UIViewController, UIWebViewDelegate {
     
@@ -41,10 +42,33 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
         webView.frame = view.frame
     }
     
+    private func hideProgress() {
+        if SVProgressHUD.isVisible() {
+            SVProgressHUD.dismiss()
+        }
+    }
+    
+    // MARK: - Request functions
+    
     private func loadWikiPage() {
         webView.delegate = self
         let request = NSURLRequest(URL: url)
         webView.loadRequest(request)
+        SVProgressHUD.show()
+    }
+    
+    
+    // MARK: - WebView Delegate
+    func webViewDidStartLoad(webView: UIWebView) {
+        
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        hideProgress()
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        hideProgress()
     }
 
 }
