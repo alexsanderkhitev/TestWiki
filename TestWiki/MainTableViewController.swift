@@ -83,6 +83,9 @@ class MainTableViewController: UITableViewController, LocationManagerDelegate {
     func didReceiveCoordinate(coordinate: CLLocationCoordinate2D) {
         DownloadManager.shared.downloadWiliArticles(coordinate, success: { (wikiArticles) in
             self.wikiArticles = wikiArticles
+            self.wikiArticles.sortInPlace({ (first, second) -> Bool in
+                first.title < second.title
+            })
             self.tableView.reloadData()
             if SVProgressHUD.isVisible() {
                 SVProgressHUD.dismiss()
